@@ -1,0 +1,77 @@
+# ClearPocket: self-hosted deployment.   Start:  docker compose up --build -d
+# Only the app port is published (default 127.0.0.1:8000). PostgreSQL is NOT published.
+name: clearpocket
+
+x-app-environment: &app-environment
+  ENVIRONMENT: ${ENVIRONMENT:-local}
+  DATABASE_URL: postgresql://${POSTGRES_USER:-clearpocket}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-clearpocket}
+  SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in .env}
+  PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-http://localhost:${APP_PORT:-8000}}
+  ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-}
+  COOKIE_SECURE: ${COOKIE_SECURE:-false}
+  COOKIE_SAMESITE: ${COOKIE_SAMESITE:-lax}
+  SESSION_IDLE_HOURS: ${SESSION_IDLE_HOURS:-168}
+  SESSION_ABSOLUTE_DAYS: ${SESSION_ABSOLUTE_DAYS:-30}
+  API_DOCS: ${API_DOCS:-false}
+  FRONTEND_DIR: /app/frontend
+  # uvicorn reads these two directly
+  FORWARDED_ALLOW_IPS: ${TRUSTED_PROXY_IPS:-127.0.0.1}
+  WEB_CONCURRENCY: ${WEB_CONCURRENCY:-2}
+
+x-app-build: &app-build
+  context: .
+  dockerfile: Dockerfile
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-clearpocket}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-clearpocket}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    # no "ports:" on purpose: reachable only from other services on the compose network
+
+  # One-shot job: applies Alembic migrations, then exits. The app waits for it to succeed.
+  migrate:
+    build: *app-build
+    image: clearpocket-app:${APP_VERSION:-latest}
+    command: ["alembic", "upgrade", "head"]
+    restart: "no"
+    environment: *app-environment
+    depends_on:
+      db:
+        condition: service_healthy
+
+  app:
+    build: *app-build
+    image: clearpocket-app:${APP_VERSION:-latest}
+    restart: unless-stopped
+    environment: *app-environment
+    depends_on:
+      db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${APP_PORT:-8000}:8000"
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=4).status == 200 else 1)"]
+      interval: 15s
+      timeout: 6s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  db-data:   # named volume: survives `docker compose down`, `restart`, rebuilds and image updates

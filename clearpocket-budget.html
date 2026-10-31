@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ClearPocket is a zero-based budgeting app. Create a private account, give every dollar a job, and keep your budget saved.">
+  <title>ClearPocket — Give every dollar a direction</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div id="marketingView" class="marketing-view">
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="ClearPocket home">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="ClearPocket logo">
+          <path d="M8 12.5A4.5 4.5 0 0 1 12.5 8h15A4.5 4.5 0 0 1 32 12.5v15a4.5 4.5 0 0 1-4.5 4.5h-15A4.5 4.5 0 0 1 8 27.5z"/>
+          <path d="M13 15.5h14M13 20h9M13 24.5h5"/>
+          <circle cx="27" cy="24.5" r="2.5"/>
+        </svg>
+        <span>ClearPocket</span>
+      </a>
+      <nav class="site-nav" aria-label="Marketing navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#preview">Preview</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true">◐</span></button>
+        <button class="button button-small button-secondary" type="button" data-open-auth="login" data-signed-out-only>Sign in</button>
+        <button class="button button-small button-primary" type="button" data-open-auth="register" data-auth-cta>Create account</button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">A plan for the money you have</p>
+          <h1>Give every dollar a direction.</h1>
+          <p class="hero-text">ClearPocket turns the balance in your accounts into a calm, flexible spending plan—before the month gets away from you.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-open-auth="register" data-auth-cta>Create your budget</button>
+            <a class="text-link" href="#how-it-works">See the 3-step method <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="fine-print">Free private account. No bank connection needed. Your budget is saved and stays yours.</p>
+        </div>
+
+        <div class="hero-product" aria-label="Budget preview">
+          <div class="preview-topline"><span>Example plan</span><span class="status-dot">Balanced</span></div>
+          <div class="preview-number">
+            <span>Ready to assign</span>
+            <strong>$0.00</strong>
+          </div>
+          <div class="mini-stack">
+            <div class="mini-row"><span><i class="dot dot-home"></i>Home</span><b>$1,540</b><small>Funded</small></div>
+            <div class="mini-row"><span><i class="dot dot-life"></i>Everyday life</span><b>$1,145</b><small>Funded</small></div>
+            <div class="mini-row"><span><i class="dot dot-future"></i>Future plans</span><b>$1,265</b><small>On track</small></div>
+          </div>
+          <div class="preview-note"><span aria-hidden="true">↗</span> Move money as life changes</div>
+        </div>
+      </section>
+
+      <section class="method-section" id="how-it-works">
+        <div class="section-intro">
+          <p class="eyebrow">A small ritual, once a payday</p>
+          <h2>Three decisions. One clear plan.</h2>
+          <p>You work only with money already in your accounts. Assign it, spend from categories, then adjust without guilt.</p>
+        </div>
+        <ol class="method-list">
+          <li><span>01</span><div><h3>See what is available</h3><p>Start with the cash you have today—not next week's paycheck.</p></div></li>
+          <li><span>02</span><div><h3>Fund what matters</h3><p>Give each dollar a job across bills, daily needs, and future goals.</p></div></li>
+          <li><span>03</span><div><h3>Change the plan</h3><p>When priorities shift, move money between categories and keep going.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="preview-section" id="preview">
+        <div class="preview-copy">
+          <p class="eyebrow">Built for real life</p>
+          <h2>The budget bends. It does not break.</h2>
+          <p>Overspent on groceries? Move $40 from dining out. ClearPocket keeps the tradeoff visible so the choice stays intentional.</p>
+          <button class="button button-secondary" type="button" data-open-auth="register" data-auth-cta>Start your own budget</button>
+        </div>
+        <div class="tradeoff-card" aria-hidden="true">
+          <div class="tradeoff-row"><span>Dining out</span><b>$180</b><span class="arrow">→</span></div>
+          <div class="tradeoff-row active"><span>Groceries</span><b>$420</b><span class="plus">+$40</span></div>
+          <div class="tradeoff-balance"><span>Plan total</span><strong>unchanged</strong></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#home" aria-label="ClearPocket home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 12.5A4.5 4.5 0 0 1 12.5 8h15A4.5 4.5 0 0 1 32 12.5v15a4.5 4.5 0 0 1-4.5 4.5h-15A4.5 4.5 0 0 1 8 27.5z"/><path d="M13 15.5h14M13 20h9M13 24.5h5"/><circle cx="27" cy="24.5" r="2.5"/></svg>
+        <span>ClearPocket</span>
+      </a>
+      <p>Your budget is saved to your private ClearPocket account. Figures on this page are examples.</p>
+    </footer>
+  </div>
+
+  <div id="authView" class="auth-view" hidden>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="ClearPocket home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 12.5A4.5 4.5 0 0 1 12.5 8h15A4.5 4.5 0 0 1 32 12.5v15a4.5 4.5 0 0 1-4.5 4.5h-15A4.5 4.5 0 0 1 8 27.5z"/><path d="M13 15.5h14M13 20h9M13 24.5h5"/><circle cx="27" cy="24.5" r="2.5"/></svg>
+        <span>ClearPocket</span>
+      </a>
+      <nav class="site-nav" aria-label="Account navigation">
+        <a href="#home">Back to home</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true">◐</span></button>
+      </nav>
+    </header>
+    <main id="authMain" class="auth-main">
+      <section class="auth-card" aria-labelledby="authHeading">
+        <p class="eyebrow" id="authKicker">Welcome back</p>
+        <h1 id="authHeading" tabindex="-1">Sign in</h1>
+        <p class="auth-notice" id="authNotice" role="status" hidden></p>
+
+        <form id="loginForm" class="auth-form" autocomplete="on">
+          <label>Email<input id="loginEmail" name="email" type="email" autocomplete="username" required maxlength="254" spellcheck="false" autocapitalize="off"></label>
+          <label>Password<input id="loginPassword" name="password" type="password" autocomplete="current-password" required maxlength="128"></label>
+          <p class="form-error" id="loginError" role="alert"></p>
+          <button class="button button-primary" type="submit">Sign in</button>
+          <p class="auth-switch">New to ClearPocket? <button class="link-button" type="button" data-auth-switch="register">Create an account</button></p>
+        </form>
+
+        <form id="registerForm" class="auth-form" autocomplete="on" hidden>
+          <label>Name <span class="optional">(optional)</span><input id="registerName" name="name" type="text" autocomplete="name" maxlength="80"></label>
+          <label>Email<input id="registerEmail" name="email" type="email" autocomplete="username" required maxlength="254" spellcheck="false" autocapitalize="off"></label>
+          <label>Password<input id="registerPassword" name="password" type="password" autocomplete="new-password" required minlength="12" maxlength="128" aria-describedby="passwordHint"></label>
+          <p class="form-hint" id="passwordHint">At least 12 characters. A short phrase of unrelated words works well.</p>
+          <p class="form-error" id="registerError" role="alert"></p>
+          <button class="button button-primary" type="submit">Create account</button>
+          <p class="auth-switch">Already have an account? <button class="link-button" type="button" data-auth-switch="login">Sign in</button></p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div id="appView" class="app-view" hidden>
+    <aside class="app-sidebar" id="appSidebar" aria-label="Budget navigation">
+      <div class="sidebar-head">
+        <a class="brand brand-inverse" href="#budget" aria-label="ClearPocket budget">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 12.5A4.5 4.5 0 0 1 12.5 8h15A4.5 4.5 0 0 1 32 12.5v15a4.5 4.5 0 0 1-4.5 4.5h-15A4.5 4.5 0 0 1 8 27.5z"/><path d="M13 15.5h14M13 20h9M13 24.5h5"/><circle cx="27" cy="24.5" r="2.5"/></svg>
+          <span>ClearPocket</span>
+        </a>
+        <button class="sidebar-close" type="button" aria-label="Close navigation" data-sidebar-close>×</button>
+      </div>
+      <div class="account-card">
+        <span>Signed in as</span>
+        <strong id="userName"></strong>
+        <small id="userEmail"></small>
+      </div>
+      <nav class="app-nav" aria-label="Main application navigation">
+        <button class="nav-item active" type="button" data-view="budget"><span aria-hidden="true">▦</span> Budget</button>
+        <button class="nav-item" type="button" data-view="transactions"><span aria-hidden="true">↕</span> Transactions <small id="navTxCount" hidden></small></button>
+        <button class="nav-item" type="button" data-view="guide"><span aria-hidden="true">?</span> Quick guide</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" type="button" data-back-home><span aria-hidden="true">←</span> Product home</button>
+        <button class="nav-item" type="button" data-logout><span aria-hidden="true">⏻</span> Sign out</button>
+        <p>Your budget is saved to your account.</p>
+      </div>
+    </aside>
+
+    <div class="app-shell">
+      <header class="app-header">
+        <button class="menu-button" type="button" aria-label="Open navigation" data-sidebar-open>☰</button>
+        <div>
+          <p class="app-kicker">Personal budget</p>
+          <h1 id="viewTitle" tabindex="-1">Budget</h1>
+        </div>
+        <div class="header-actions">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true">◐</span></button>
+          <button class="button button-primary button-small" type="button" data-add-transaction>+ Transaction</button>
+        </div>
+      </header>
+
+      <main class="app-main" id="appMain">
+        <section class="budget-view" id="budgetView">
+          <div class="month-bar">
+            <button class="icon-button" type="button" aria-label="Previous month" data-month-prev>←</button>
+            <div><strong data-month-label>September 2026</strong><span>Plan with money available now</span></div>
+            <button class="icon-button" type="button" aria-label="Next month" data-month-next>→</button>
+            <button class="button button-secondary button-small" type="button" data-month-today hidden>This month</button>
+          </div>
+
+          <section class="ready-card" aria-labelledby="readyHeading">
+            <div>
+              <p id="readyHeading">Ready to assign</p>
+              <strong id="readyAmount">—</strong>
+              <span id="readyMessage">Loading your budget…</span>
+            </div>
+            <button class="button button-inverse" type="button" data-assign>Assign money</button>
+          </section>
+
+          <dl class="summary-strip" id="summaryStrip" aria-label="Month summary">
+            <div><dt>Income this month</dt><dd id="sumIncome">—</dd></div>
+            <div><dt>Assigned</dt><dd id="sumAssigned">—</dd></div>
+            <div><dt>Activity</dt><dd id="sumActivity">—</dd></div>
+            <div><dt>Carried over</dt><dd id="sumCarry">—</dd></div>
+            <div><dt>Available</dt><dd id="sumAvailable">—</dd></div>
+          </dl>
+
+          <div class="budget-toolbar">
+            <label class="search-field"><span class="sr-only">Search categories</span><span aria-hidden="true">⌕</span><input id="categorySearch" type="search" placeholder="Search categories"></label>
+            <button class="button button-secondary button-small" type="button" data-move>Move money</button>
+          </div>
+
+          <section class="budget-table-wrap" aria-labelledby="categoriesHeading">
+            <div class="table-heading">
+              <div><h2 id="categoriesHeading">Your categories</h2><p>Click any assigned amount to edit it.</p></div>
+              <div class="legend"><span>Assigned</span><span>Activity</span><span>Available</span></div>
+              <div class="table-actions"><button class="button button-secondary button-small" type="button" data-add-group>+ Add group</button></div>
+            </div>
+            <div id="categoryGroups" class="category-groups" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section class="transactions-view" id="transactionsView" hidden aria-labelledby="transactionsHeading">
+          <div class="view-lead"><div><p class="app-kicker" data-month-label>September 2026</p><h2 id="transactionsHeading">Transactions</h2><p>Spending updates each category's available balance.</p></div><button class="button button-primary" type="button" data-add-transaction>+ Add transaction</button></div>
+          <div class="month-bar month-bar-inline">
+            <button class="icon-button" type="button" aria-label="Previous month" data-month-prev>←</button>
+            <div><strong data-month-label>September 2026</strong></div>
+            <button class="icon-button" type="button" aria-label="Next month" data-month-next>→</button>
+          </div>
+          <div class="transaction-filters">
+            <label class="search-field"><span class="sr-only">Search transactions</span><span aria-hidden="true">⌕</span><input id="transactionSearch" type="search" placeholder="Search payee, memo or category"></label>
+            <span id="transactionCount" class="count-pill" role="status">Loading…</span>
+          </div>
+          <div class="transaction-table-wrap">
+            <table class="transaction-table">
+              <thead><tr><th>Date</th><th>Payee</th><th>Category</th><th class="amount-cell">Amount</th></tr></thead>
+              <tbody id="transactionRows"></tbody>
+            </table>
+          </div>
+          <div class="load-more" id="txLoadMore" hidden><button class="button button-secondary" type="button" data-tx-more>Load more</button></div>
+        </section>
+
+        <section class="guide-view" id="guideView" hidden aria-labelledby="guideHeading">
+          <div class="guide-panel">
+            <p class="app-kicker">Two-minute tour</p>
+            <h2 id="guideHeading">Plan, spend, adjust.</h2>
+            <p>ClearPocket follows a simple zero-based workflow: only budget money you already have, and keep the remaining amount at zero. Unspent money carries forward to the next month.</p>
+            <ol class="guide-steps">
+              <li><span>1</span><div><h3>Add and assign income</h3><p>Record income as a transaction, then use “Assign money” or click a category amount.</p></div></li>
+              <li><span>2</span><div><h3>Record spending</h3><p>Add a transaction to reduce the category's available balance.</p></div></li>
+              <li><span>3</span><div><h3>Cover surprises</h3><p>Move money between categories without changing the total plan. Overspending reduces next month's ready-to-assign amount.</p></div></li>
+            </ol>
+            <button class="button button-primary" type="button" data-view-jump="budget">Open the budget</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <dialog id="moveDialog" class="app-dialog" aria-labelledby="moveTitle">
+    <form method="dialog" id="moveForm">
+      <div class="dialog-head"><div><p class="app-kicker">Adjust the plan</p><h2 id="moveTitle">Move money</h2></div><button class="dialog-close" type="button" data-dialog-close aria-label="Close dialog">×</button></div>
+      <p class="dialog-copy">Shift available money between categories for <strong data-month-label>this month</strong>. Your total plan stays unchanged.</p>
+      <label>From category<select id="moveFrom" required></select></label>
+      <label>To category<select id="moveTo" required></select></label>
+      <label>Amount<div class="money-input"><span>$</span><input id="moveAmount" type="number" min="0.01" step="0.01" placeholder="0.00" required inputmode="decimal"></div></label>
+      <p class="form-error" id="moveError" role="alert"></p>
+      <div class="dialog-actions"><button class="button button-secondary" type="button" data-dialog-close>Cancel</button><button class="button button-primary" type="submit">Move money</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="assignDialog" class="app-dialog" aria-labelledby="assignTitle">
+    <form method="dialog" id="assignForm">
+      <div class="dialog-head"><div><p class="app-kicker">Fund a priority</p><h2 id="assignTitle">Assign money</h2></div><button class="dialog-close" type="button" data-dialog-close aria-label="Close dialog">×</button></div>
+      <p class="dialog-copy" id="assignDescription">Choose a category and update its assigned amount for <strong data-month-label>this month</strong>.</p>
+      <label>Category<select id="assignCategory" required></select></label>
+      <label>New assigned amount<div class="money-input"><span>$</span><input id="assignAmount" type="number" min="0" step="0.01" required inputmode="decimal"></div></label>
+      <p class="form-hint" id="assignHint"></p><p class="form-error" id="assignError" role="alert"></p>
+      <div class="dialog-actions"><button class="button button-secondary" type="button" data-dialog-close>Cancel</button><button class="button button-primary" type="submit">Update plan</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="transactionDialog" class="app-dialog" aria-labelledby="transactionTitle">
+    <form method="dialog" id="transactionForm">
+      <div class="dialog-head"><div><p class="app-kicker">Record spending</p><h2 id="transactionTitle">Add transaction</h2></div><button class="dialog-close" type="button" data-dialog-close aria-label="Close dialog">×</button></div>
+      <label>Type<select id="transactionType"><option value="spending">Spending</option><option value="income">Income (adds to ready to assign)</option></select></label>
+      <label>Date<input id="transactionDate" type="date" required min="2000-01-01" max="2100-12-31"></label>
+      <label>Payee<input id="transactionPayee" type="text" placeholder="e.g. Corner Market" required maxlength="120"></label>
+      <label id="transactionCategoryField">Category<select id="transactionCategory"></select></label>
+      <label>Amount<div class="money-input"><span>$</span><input id="transactionAmount" type="number" min="0.01" step="0.01" placeholder="0.00" required inputmode="decimal"></div></label>
+      <p class="form-error" id="transactionError" role="alert"></p>
+      <div class="dialog-actions"><button class="button button-secondary" type="button" data-dialog-close>Cancel</button><button class="button button-primary" type="submit">Add transaction</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="groupDialog" class="app-dialog" aria-labelledby="groupTitle">
+    <form method="dialog" id="groupForm">
+      <div class="dialog-head"><div><p class="app-kicker">Organize</p><h2 id="groupTitle">Add group</h2></div><button class="dialog-close" type="button" data-dialog-close aria-label="Close dialog">×</button></div>
+      <label>Group name<input id="groupName" type="text" required maxlength="60" placeholder="e.g. Home &amp; bills"></label>
+      <p class="form-error" id="groupError" role="alert"></p>
+      <div class="dialog-actions"><button class="button button-danger" type="button" id="groupDelete" hidden>Delete group</button><button class="button button-secondary" type="button" data-dialog-close>Cancel</button><button class="button button-primary" type="submit">Save group</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="categoryDialog" class="app-dialog" aria-labelledby="categoryTitle">
+    <form method="dialog" id="categoryForm">
+      <div class="dialog-head"><div><p class="app-kicker">Organize</p><h2 id="categoryTitle">Add category</h2></div><button class="dialog-close" type="button" data-dialog-close aria-label="Close dialog">×</button></div>
+      <label>Group<select id="categoryGroup" required></select></label>
+      <label>Category name<input id="categoryName" type="text" required maxlength="60" placeholder="e.g. Groceries"></label>
+      <label>Note <span class="optional">(optional)</span><input id="categoryTarget" type="text" maxlength="80" placeholder="e.g. Monthly target $500"></label>
+      <p class="form-error" id="categoryError" role="alert"></p>
+      <div class="dialog-actions"><button class="button button-danger" type="button" id="categoryDelete" hidden>Delete category</button><button class="button button-secondary" type="button" data-dialog-close>Cancel</button><button class="button button-primary" type="submit">Save category</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="confirmDialog" class="app-dialog" aria-labelledby="confirmTitle">
+    <form method="dialog" id="confirmForm">
+      <div class="dialog-head"><div><p class="app-kicker">Please confirm</p><h2 id="confirmTitle">Are you sure?</h2></div><button class="dialog-close" type="button" data-dialog-close aria-label="Close dialog">×</button></div>
+      <p class="dialog-copy" id="confirmMessage"></p>
+      <p class="form-error" id="confirmError" role="alert"></p>
+      <div class="dialog-actions"><button class="button button-secondary" type="button" data-dialog-close>Cancel</button><button class="button button-danger" type="submit" id="confirmOk">Delete</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="sidebar-scrim" data-sidebar-close hidden></div>
+</body>
+</html>
